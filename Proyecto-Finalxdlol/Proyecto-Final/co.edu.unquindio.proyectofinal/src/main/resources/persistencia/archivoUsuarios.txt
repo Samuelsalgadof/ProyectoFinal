@@ -1,0 +1,2 @@
+Santiago,1090274004,3147604263,santiago.munozl@uqvirtual.edu.co,22,111,50000,villa
+Sam,1090273435,3002414858,samuel.salgadof@uqvirtual.edu.co,18,222,80000,La Adiela
