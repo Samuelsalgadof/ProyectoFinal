@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="22.0.2" class="java.beans.XMLDecoder">
+ <object class="co.edu.unquindio.proyectofinal.dwr.model.Pes" id="Pes0">
+  <void property="listaUsuarios">
+   <void method="add">
+    <object class="co.edu.unquindio.proyectofinal.dwr.model.Usuario">
+     <void property="correo">
+      <string>santiago.munozl@uqvirtual.edu.co</string>
+     </void>
+     <void property="direccion">
+      <string>villa</string>
+     </void>
+     <void property="documento">
+      <string>1090274004</string>
+     </void>
+     <void property="edad">
+      <string>22</string>
+     </void>
+     <void property="idUsuario">
+      <string>111</string>
+     </void>
+     <void property="nombre">
+      <string>Santiago</string>
+     </void>
+     <void property="saldoTotal">
+      <int>50000</int>
+     </void>
+     <void property="telefono">
+      <string>3147604263</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.unquindio.proyectofinal.dwr.model.Usuario">
+     <void property="correo">
+      <string>samuel.salgadof@uqvirtual.edu.co</string>
+     </void>
+     <void property="direccion">
+      <string>La Adiela</string>
+     </void>
+     <void property="documento">
+      <string>1090273435</string>
+     </void>
+     <void property="edad">
+      <string>18</string>
+     </void>
+     <void property="idUsuario">
+      <string>222</string>
+     </void>
+     <void property="nombre">
+      <string>Sam</string>
+     </void>
+     <void property="saldoTotal">
+      <int>80000</int>
+     </void>
+     <void property="telefono">
+      <string>3002414858</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.unquindio.proyectofinal.dwr.model.Usuario">
+     <void property="correo">
+      <string>dmsalgado1981@hotmail.com</string>
+     </void>
+     <void property="direccion">
+      <string>placer</string>
+     </void>
+     <void property="documento">
+      <string>312313</string>
+     </void>
+     <void property="edad">
+      <string>43</string>
+     </void>
+     <void property="idUsuario">
+      <string>12313</string>
+     </void>
+     <void property="nombre">
+      <string>Diana</string>
+     </void>
+     <void property="saldoTotal">
+      <int>123312313</int>
+     </void>
+     <void property="telefono">
+      <string>1333113</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.unquindio.proyectofinal.dwr.model.Usuario">
+     <void property="correo">
+      <string>adad</string>
+     </void>
+     <void property="direccion">
+      <string>adad</string>
+     </void>
+     <void property="documento">
+      <string>1313</string>
+     </void>
+     <void property="edad">
+      <string>131</string>
+     </void>
+     <void property="idUsuario">
+      <string>213313</string>
+     </void>
+     <void property="nombre">
+      <string>dsad</string>
+     </void>
+     <void property="saldoTotal">
+      <int>31131</int>
+     </void>
+     <void property="telefono">
+      <string>311131</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>
