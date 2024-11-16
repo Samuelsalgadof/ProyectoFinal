@@ -1,65 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="885.0" prefWidth="1194.0" style="-fx-background-color: #013220;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unquindio.proyectofinal.dwr.viewController.CuentaViewController">
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.unquindio.proyectofinal.dwr.viewController.PresupuestoViewController"
+            prefHeight="709.0" prefWidth="1033.0" style="-fx-background-color: #013220; -fx-padding: 20;">
+
     <children>
-        <SplitPane dividerPositions="0.4902676399026764" layoutX="22.0" layoutY="8.0" orientation="VERTICAL" prefHeight="824.0" prefWidth="1128.0">
-            <items>
-                <!-- Primer panel: Campos de datos para cuentas -->
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="433.0" prefWidth="1126.0" style="-fx-background-color: #3C3F41; -fx-padding: 20; -fx-border-color: #00FF7F; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;">
+        <!-- Formulario -->
+        <GridPane hgap="10" layoutX="116.0" layoutY="20.0" prefHeight="250.0" prefWidth="800.0" style="-fx-background-color: #3C3F41; -fx-padding: 20; -fx-border-color: #00FF7F; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="150" />
+                <ColumnConstraints minWidth="300" />
+            </columnConstraints>
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <children>
+                <Label style="-fx-text-fill: #A9DFBF;" text="Nombre del Banco:" />
+                <ComboBox fx:id="cbBanco" style="-fx-background-color: #1C2833; -fx-text-fill: #A9DFBF; -fx-border-color: #00FF7F;" GridPane.columnIndex="1">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Banco 1" />
+                            <String fx:value="Banco 2" />
+                            <String fx:value="Banco 3" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <Label style="-fx-text-fill: #A9DFBF;" text="Tipo de Cuenta:" GridPane.rowIndex="1" />
+                <ComboBox fx:id="cbTipoCuenta" style="-fx-background-color: #1C2833; -fx-text-fill: #A9DFBF; -fx-border-color: #00FF7F;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Ahorros" />
+                            <String fx:value="Corriente" />
+                            <String fx:value="Crédito" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <Label style="-fx-text-fill: #A9DFBF;" text="Número de Cuenta:" GridPane.rowIndex="2" />
+                <TextField fx:id="txtNumeroCuenta" prefHeight="27.0" style="-fx-background-color: #1C2833; -fx-text-fill: #A9DFBF; -fx-border-color: #00FF7F;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <HBox alignment="CENTER_RIGHT" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="3">
                     <children>
-                        <!-- Etiquetas para los campos de las cuentas bancarias -->
-                        <Label layoutX="57.0" layoutY="46.0" prefHeight="17.0" prefWidth="54.0" style="-fx-text-fill: #A9DFBF;" text="idCuenta" />
-                        <Label layoutX="57.0" layoutY="127.0" prefHeight="17.0" prefWidth="54.0" style="-fx-text-fill: #A9DFBF;" text="Tipo" />
-                        <Label layoutX="53.0" layoutY="204.0" style="-fx-text-fill: #A9DFBF;" text="Numero Cuenta" />
-                        <Label layoutX="61.0" layoutY="295.0" style="-fx-text-fill: #A9DFBF;" text="Saldo" />
-                        <Label layoutX="647.0" layoutY="46.0" style="-fx-text-fill: #A9DFBF;" text="Fecha Apertura" />
-                        <Label layoutX="701.0" layoutY="127.0" style="-fx-text-fill: #A9DFBF;" />
-                        <Label layoutX="641.0" layoutY="204.0" style="-fx-text-fill: #A9DFBF;" text="Titular" />
-                        <Label layoutX="638.0" layoutY="287.0" style="-fx-text-fill: #A9DFBF;" text="Estado" />
-                        <!-- Campos de texto para ingresar datos -->
-                        <TextField fx:id="txtidCuenta" layoutX="130.0" layoutY="42.0" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #1C2833; -fx-text-fill: #A9DFBF; -fx-border-color: #00FF7F;" />
-                        <TextField fx:id="txtTipo" layoutX="130.0" layoutY="124.0" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #1C2833; -fx-text-fill: #A9DFBF; -fx-border-color: #00FF7F;" />
-                        <TextField fx:id="txtNumeroCuenta" layoutX="128.0" layoutY="200.0" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #1C2833; -fx-text-fill: #A9DFBF; -fx-border-color: #00FF7F;" />
-                        <TextField fx:id="txtSaldo" layoutX="128.0" layoutY="283.0" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #1C2833; -fx-text-fill: #A9DFBF; -fx-border-color: #00FF7F;" />
-                        <TextField fx:id="txtFechaApertura" layoutX="711.0" layoutY="42.0" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: #1C2833; -fx-text-fill: #A9DFBF; -fx-border-color: #00FF7F;" />
-                        <TextField fx:id="txtTitular" layoutX="711.0" layoutY="124.0" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: #1C2833; -fx-text-fill: #A9DFBF; -fx-border-color: #00FF7F;" />
-                        <TextField fx:id="txtEstado" layoutX="718.0" layoutY="200.0" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: #1C2833; -fx-text-fill: #A9DFBF; -fx-border-color: #00FF7F;" />
-                        <!-- Botones para agregar, actualizar y eliminar cuentas -->
-                        <Button fx:id="btnAgregarCuenta" layoutX="467.0" layoutY="334.0" mnemonicParsing="false" onAction="#onAgregarCuenta" prefHeight="39.0" prefWidth="151.0" style="-fx-background-color: #28B463; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 16;" text="Agregar" />
-                        <Button fx:id="btnActualizarCuenta" layoutX="751.0" layoutY="334.0" mnemonicParsing="false" onAction="#onActualizarCuenta" prefHeight="39.0" prefWidth="158.0" style="-fx-background-color: #28B463; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 16;" text="Actualizar" />
-                        <Button fx:id="btnNuevoCuenta" layoutX="203.0" layoutY="334.0" mnemonicParsing="false" onAction="#onNuevoCuenta" prefHeight="39.0" prefWidth="151.0" style="-fx-background-color: #28B463; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 16;" text="Nuevo" />
+                        <Button fx:id="btnAgregar" style="-fx-background-color: #28B463; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 16;" text="Agregar" />
+                        <Button fx:id="btnActualizar" style="-fx-background-color: #28B463; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 16;" text="Actualizar" />
                     </children>
-                </AnchorPane>
-                <!-- Segundo panel: Tabla con la información de las cuentas -->
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="233.0" prefWidth="883.0" style="-fx-background-color: #2E8B57; -fx-border-color: #00FF7F; -fx-border-width: 2; -fx-border-radius: 8;">
-                    <children>
-                        <TableView fx:id="tablaCuenta" layoutX="14.0" layoutY="14.0" prefHeight="375.0" prefWidth="1107.0" style="-fx-background-color: #4CAF50;">
-                            <columns>
-                                <TableColumn fx:id="tcidCuenta" prefWidth="135.0" style="-fx-background-color: #A9DFBF; -fx-text-fill:#0f2d03;" text="idCuenta" />
-                                <TableColumn fx:id="tcTipo" prefWidth="135.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="Tipo" />
-                                <TableColumn fx:id="tcNumeroCuenta" prefWidth="150.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="Numero Cuenta" />
-                                <TableColumn fx:id="tcSaldo" prefWidth="142.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="Saldo" />
-                                <TableColumn fx:id="tcFechaApertura" prefWidth="152.0" style="-fx-background-color:#A9DFBF; -fx-text-fill: #0f2d03;" text="Fecha Apertura" />
-                                <TableColumn fx:id="tcTitular" prefWidth="138.0" style="-fx-background-color: #A9DFBF; -fx-text-fill:#0f2d03;" text="Titular" />
-                                <TableColumn fx:id="tcEstado" prefWidth="134.0" style="-fx-background-color:  #A9DFBF; -fx-text-fill: #0f2d03;" text="Estado" />
-                            </columns>
-                        </TableView>
-                    </children>
-                </AnchorPane>
-            </items>
-        </SplitPane>
-        <!-- Botón Eliminar cuenta -->
-        <Button fx:id="btnEliminarCuenta" layoutX="529.0" layoutY="811.0" mnemonicParsing="false" onAction="#onEliminarCuenta" prefHeight="39.0" prefWidth="158.0" style="-fx-background-color: #28B463; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 16;" text="Eliminar" />
+                </HBox>
+            </children>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+
+        <!-- Tabla de Cuentas -->
+        <TableView fx:id="tableCuentas" layoutX="20.0" layoutY="280.0" prefHeight="350.0" prefWidth="994.0" style="-fx-background-color: #2E8B57; -fx-border-color: #00FF7F; -fx-border-width: 2; -fx-border-radius: 8;">
+            <columns>
+                <TableColumn fx:id="colIdCuenta" prefWidth="100.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="ID Cuenta" />
+                <TableColumn fx:id="colBanco" prefWidth="200.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="Nombre del Banco" />
+                <TableColumn fx:id="colTipoCuenta" prefWidth="200.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="Tipo de Cuenta" />
+                <TableColumn fx:id="colNumeroCuenta" prefWidth="200.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="Número de Cuenta" />
+            </columns>
+        </TableView>
+
+        <!-- Botón Eliminar -->
+        <Button fx:id="btnEliminar" layoutX="450.0" layoutY="650.0" style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 16;" text="Eliminar" />
     </children>
 </AnchorPane>
