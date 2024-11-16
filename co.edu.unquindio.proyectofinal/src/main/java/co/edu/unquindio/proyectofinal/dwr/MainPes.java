@@ -21,7 +21,3 @@ public class MainPes extends Application {
         launch();
     }
 }
-
-
-
-
