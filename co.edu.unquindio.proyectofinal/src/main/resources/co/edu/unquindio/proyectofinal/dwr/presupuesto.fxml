@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unquindio.proyectofinal.dwr.viewController.PresupuestoViewController">
+    <children>
+        <SplitPane dividerPositions="0.4902676399026764" layoutX="22.0" layoutY="8.0" orientation="VERTICAL" prefHeight="824.0" prefWidth="1128.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="433.0" prefWidth="1126.0">
+                    <children>
+                        <Label layoutX="36.0" layoutY="46.0" prefHeight="17.0" prefWidth="97.0" text="idPresupuesto" />
+                        <Label layoutX="57.0" layoutY="127.0" prefHeight="17.0" prefWidth="54.0" text="Nombre" />
+                        <Label layoutX="600.0" layoutY="46.0" prefHeight="17.0" prefWidth="97.0" text="Monto Asignado" />
+                        <Label layoutX="701.0" layoutY="127.0" />
+                        <TextField fx:id="txtNombrePresupuesto" layoutX="130.0" layoutY="124.0" prefHeight="25.0" prefWidth="300.0" />
+                        <TextField fx:id="txtidPresupuesto" layoutX="130.0" layoutY="42.0" prefHeight="25.0" prefWidth="300.0" />
+                        <TextField fx:id="intMontoAsignado" layoutX="711.0" layoutY="42.0" prefHeight="25.0" prefWidth="237.0" />
+                        <Button fx:id="btnAgregarPresupuesto" layoutX="467.0" layoutY="334.0" mnemonicParsing="false" onAction="#onAgregarPresupuesto" prefHeight="39.0" prefWidth="151.0" text="Agregar " />
+                        <Button fx:id="btnActualizarPresupuesto" layoutX="751.0" layoutY="334.0" mnemonicParsing="false" onAction="#onActualizarPresupuesto" prefHeight="39.0" prefWidth="158.0" text="Actualizar" />
+                        <Button fx:id="btnNuevoPresupuesto" layoutX="203.0" layoutY="334.0" mnemonicParsing="false" onAction="#onNuevoPresupuesto" prefHeight="39.0" prefWidth="151.0" text="Nuevo" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="233.0" prefWidth="883.0">
+                    <children>
+                        <TableView fx:id="tablaUsuario" layoutX="14.0" layoutY="14.0" prefHeight="375.0" prefWidth="1107.0">
+                            <columns>
+                                <TableColumn fx:id="tcidPresupuesto" prefWidth="314.0" text="iD Presupuesto" />
+                                <TableColumn fx:id="tcnombrePresupuesto" prefWidth="227.0" text="Nombre" />
+                                <TableColumn fx:id="tcmontoAsignado" prefWidth="281.0" text="Monto Asignado" />
+                                <TableColumn fx:id="tcMontoGastado" minWidth="0.0" prefWidth="284.0" text="Monto Gastado" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <Button fx:id="btnEliminarPresupuesto" layoutX="529.0" layoutY="811.0" mnemonicParsing="false" onAction="#onEliminarPresupuesto" prefHeight="39.0" prefWidth="158.0" text="Eliminar " />
+    </children>
+</AnchorPane>
