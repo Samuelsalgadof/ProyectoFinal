@@ -20,6 +20,8 @@ public class Persistencia {
     public static final String RUTA_ARCHIVO_LOG = "src/main/resources/persistencia/Log/UsuariosLog.txt";
     public static final String RUTA_ARCHIVO_MODELO_PES_BINARIO = "src/main/resources/persistencia/model.dat";
     public static final String RUTA_ARCHIVO_MODELO_PES_XML = "src/main/resources/persistencia/model.xml";
+    public static final String RUTA_ARCHIVO_PROPERTIES = "src/main/resources/Propiedades/db_properties.txt";
+
 
 //	C:\td\persistencia
 
@@ -275,7 +277,8 @@ public class Persistencia {
     }
 
     public static boolean iniciarSesion(String user, String password){
-        return ArchivoUtil.iniciarSesion(user,password,RUTA_ARCHIVO_USUARIOS);
+        System.out.println(user);
+        return ArchivoUtil.iniciarSesion(user,password,RUTA_ARCHIVO_PROPERTIES);
     }
 }
 

@@ -1,0 +1,1 @@
+supervisor@securePass123@null@127.0.0.1@198.168.1.105@/api/v1/status@/api/v3/info
