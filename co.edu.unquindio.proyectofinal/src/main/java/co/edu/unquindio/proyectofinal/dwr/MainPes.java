@@ -12,7 +12,7 @@ public class MainPes extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainPes.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("hello!");
+        stage.setTitle("Logeate");
         stage.setScene(scene);
         stage.show();
     }
@@ -21,8 +21,4 @@ public class MainPes extends Application {
         launch();
     }
 }
-<<<<<<< HEAD
 
-=======
-//Muñoz perrita tonta ESTUPIDAADA
->>>>>>> 55b0142fc3d36676f8cf696e66216d59784fe82e

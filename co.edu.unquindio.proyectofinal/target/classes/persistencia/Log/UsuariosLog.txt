@@ -166,3 +166,5 @@ nov 15, 2024 5:30:44 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil
 INFO: Agregar Usuario,Usuario agregado,2024-11-15
 nov 15, 2024 5:30:54 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2024-11-15
+nov 15, 2024 11:15:50 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-15
