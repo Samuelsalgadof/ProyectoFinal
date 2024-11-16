@@ -184,7 +184,6 @@ nov 16, 2024 1:07:50 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil
 INFO: inicioSesión,Inicio de sesión,2024-11-16
 nov 16, 2024 1:10:24 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2024-11-16
-<<<<<<< HEAD
 nov 16, 2024 1:18:47 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2024-11-16
 nov 16, 2024 1:32:05 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
@@ -297,5 +296,5 @@ nov 16, 2024 3:57:48 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil
 INFO: inicioSesión,Inicio de sesión,2024-11-16
 nov 16, 2024 4:05:32 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2024-11-16
-=======
->>>>>>> 8a4a5647f88eaaec5b349c26171e6ac0b2f0bc4c
+nov 16, 2024 4:07:19 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16

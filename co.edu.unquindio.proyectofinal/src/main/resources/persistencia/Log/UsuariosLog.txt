@@ -298,3 +298,5 @@ nov 16, 2024 4:05:32 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil
 INFO: inicioSesión,Inicio de sesión,2024-11-16
 nov 16, 2024 4:07:19 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 4:30:19 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16

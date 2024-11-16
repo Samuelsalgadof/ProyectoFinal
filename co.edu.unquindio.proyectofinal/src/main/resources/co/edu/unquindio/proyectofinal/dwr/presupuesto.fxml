@@ -8,38 +8,38 @@
 <AnchorPane prefHeight="709.0" prefWidth="1033.0" style="-fx-background-color: #013220; -fx-padding: 20;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unquindio.proyectofinal.dwr.viewController.PresupuestoViewController">
     <children>
         <!-- Panel Dividido -->
-        <SplitPane dividerPositions="0.5" layoutX="20.0" layoutY="10.0" orientation="VERTICAL" prefHeight="824.0" prefWidth="1128.0">
+        <SplitPane dividerPositions="0.5" layoutX="10.0" layoutY="10.0" orientation="VERTICAL" prefHeight="689.0" prefWidth="1013.0" style="-fx-background-color: transparent;">
             <items>
                 <!-- Panel Superior -->
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="433.0" prefWidth="1126.0">
+                <AnchorPane prefHeight="344.0" prefWidth="1013.0" style="-fx-background-color: transparent;">
                     <children>
                         <!-- Formulario -->
-                        <Label layoutX="36.0" layoutY="46.0" text="ID Presupuesto" style="-fx-text-fill: rgba(50,93,19,0.99);" />
-                        <TextField fx:id="txtidPresupuesto" layoutX="130.0" layoutY="42.0" prefHeight="25.0" prefWidth="300.0" />
+                        <Label layoutX="36.0" layoutY="46.0" text="ID Presupuesto" style="-fx-text-fill: #A9DFBF;" />
+                        <TextField fx:id="txtidPresupuesto" layoutX="130.0" layoutY="42.0" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #1C2833; -fx-text-fill: #A9DFBF;" />
 
-                        <Label layoutX="57.0" layoutY="127.0" text="Nombre" style="-fx-text-fill: rgba(50,93,19,0.99);" />
-                        <TextField fx:id="txtNombrePresupuesto" layoutX="130.0" layoutY="124.0" prefHeight="25.0" prefWidth="300.0" />
+                        <Label layoutX="57.0" layoutY="127.0" text="Nombre" style="-fx-text-fill: #A9DFBF;" />
+                        <TextField fx:id="txtNombrePresupuesto" layoutX="130.0" layoutY="124.0" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #1C2833; -fx-text-fill: #A9DFBF;" />
 
-                        <Label layoutX="600.0" layoutY="46.0" text="Monto Asignado" style="-fx-text-fill: rgba(50,93,19,0.99);" />
-                        <TextField fx:id="txtMontoAsignado" layoutX="711.0" layoutY="42.0" prefHeight="25.0" prefWidth="237.0" />
+                        <Label layoutX="600.0" layoutY="46.0" text="Monto Asignado" style="-fx-text-fill: #A9DFBF;" />
+                        <TextField fx:id="txtMontoAsignado" layoutX="711.0" layoutY="42.0" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: #1C2833; -fx-text-fill: #A9DFBF;" />
 
                         <!-- Botones -->
-                        <Button fx:id="btnNuevoPresupuesto" layoutX="203.0" layoutY="334.0" mnemonicParsing="false" onAction="#onNuevoPresupuesto" prefHeight="39.0" prefWidth="151.0" text="Nuevo" style="-fx-background-color: #28B463; -fx-text-fill: rgba(50,93,19,0.99);" />
-                        <Button fx:id="btnAgregarPresupuesto" layoutX="467.0" layoutY="334.0" mnemonicParsing="false" onAction="#onAgregarPresupuesto" prefHeight="39.0" prefWidth="151.0" text="Agregar" style="-fx-background-color: #28B463; -fx-text-fill: rgba(50,93,19,0.99);" />
-                        <Button fx:id="btnActualizarPresupuesto" layoutX="751.0" layoutY="334.0" mnemonicParsing="false" onAction="#onActualizarPresupuesto" prefHeight="39.0" prefWidth="158.0" text="Actualizar" style="-fx-background-color: #28B463; -fx-text-fill: rgba(50,93,19,0.99);" />
+                        <Button fx:id="btnNuevoPresupuesto" layoutX="203.0" layoutY="334.0" mnemonicParsing="false" onAction="#onNuevoPresupuesto" prefHeight="39.0" prefWidth="151.0" text="Nuevo" style="-fx-background-color: #28B463; -fx-text-fill: white;" />
+                        <Button fx:id="btnAgregarPresupuesto" layoutX="467.0" layoutY="334.0" mnemonicParsing="false" onAction="#onAgregarPresupuesto" prefHeight="39.0" prefWidth="151.0" text="Agregar" style="-fx-background-color: #28B463; -fx-text-fill: white;" />
+                        <Button fx:id="btnActualizarPresupuesto" layoutX="751.0" layoutY="334.0" mnemonicParsing="false" onAction="#onActualizarPresupuesto" prefHeight="39.0" prefWidth="158.0" text="Actualizar" style="-fx-background-color: #28B463; -fx-text-fill: white;" />
                     </children>
                 </AnchorPane>
 
                 <!-- Panel Inferior -->
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="233.0" prefWidth="883.0">
+                <AnchorPane prefHeight="344.0" prefWidth="1013.0" style="-fx-background-color: transparent;">
                     <children>
                         <!-- Tabla de Presupuestos -->
-                        <TableView fx:id="tablaPresupuestos" layoutX="14.0" layoutY="14.0" prefHeight="375.0" prefWidth="1107.0" style="-fx-background-color: #2E8B57; -fx-border-color: #00FF7F; -fx-border-width: 2; -fx-border-radius: 8;">
+                        <TableView fx:id="tablaPresupuestos" layoutX="14.0" layoutY="14.0" prefHeight="310.0" prefWidth="985.0" style="-fx-background-color: #2E8B57; -fx-border-color: #00FF7F; -fx-border-width: 2; -fx-border-radius: 8;">
                             <columns>
-                                <TableColumn fx:id="tcidPresupuesto" prefWidth="314.0" text="ID Presupuesto" />
-                                <TableColumn fx:id="tcnombrePresupuesto" prefWidth="227.0" text="Nombre" />
-                                <TableColumn fx:id="tcmontoAsignado" prefWidth="281.0" text="Monto Asignado" />
-                                <TableColumn fx:id="tcMontoGastado" prefWidth="284.0" text="Monto Gastado" />
+                                <TableColumn fx:id="tcidPresupuesto" prefWidth="240.0" text="ID Presupuesto" />
+                                <TableColumn fx:id="tcnombrePresupuesto" prefWidth="250.0" text="Nombre" />
+                                <TableColumn fx:id="tcmontoAsignado" prefWidth="250.0" text="Monto Asignado" />
+                                <TableColumn fx:id="tcMontoGastado" prefWidth="240.0" text="Monto Gastado" />
                             </columns>
                         </TableView>
                     </children>
@@ -48,6 +48,6 @@
         </SplitPane>
 
         <!-- Botón Eliminar -->
-        <Button fx:id="btnEliminarPresupuesto" layoutX="529.0" layoutY="811.0" mnemonicParsing="false" onAction="#onEliminarPresupuesto" prefHeight="39.0" prefWidth="158.0" text="Eliminar" style="-fx-background-color: #E74C3C; -fx-text-fill: rgba(50,93,19,0.99);" />
+        <Button fx:id="btnEliminarPresupuesto" layoutX="500.0" layoutY="670.0" mnemonicParsing="false" onAction="#onEliminarPresupuesto" prefHeight="39.0" prefWidth="158.0" text="Eliminar" style="-fx-background-color: #28B463; -fx-text-fill: white;" />
     </children>
 </AnchorPane>
