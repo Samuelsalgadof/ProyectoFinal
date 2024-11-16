@@ -16,10 +16,10 @@ public class Persistencia {
 
 
     //bancoUq/src/main/resources/persistencia/archivoClientes.txt|
-    public static final String RUTA_ARCHIVO_USUARIOS = "D:\\4 semestre\\programacion - 3\\Proyecto-Finalxdlol\\Proyecto-Final\\co.edu.unquindio.proyectofinal\\src\\main\\resources\\persistencia\\archivoUsuarios.txt";
-    public static final String RUTA_ARCHIVO_LOG = "D:\\4 semestre\\programacion - 3\\Proyecto-Finalxdlol\\Proyecto-Final\\co.edu.unquindio.proyectofinal\\src\\main\\resources\\persistencia\\Log\\UsuariosLog.txt";
-    public static final String RUTA_ARCHIVO_MODELO_PES_BINARIO = "D:\\4 semestre\\programacion - 3\\Proyecto-Finalxdlol\\Proyecto-Final\\co.edu.unquindio.proyectofinal\\src\\main\\resources\\persistencia\\model.dat";
-    public static final String RUTA_ARCHIVO_MODELO_PES_XML = "D:\\4 semestre\\programacion - 3\\Proyecto-Finalxdlol\\Proyecto-Final\\co.edu.unquindio.proyectofinal\\src\\main\\resources\\persistencia\\model.xml";
+    public static final String RUTA_ARCHIVO_USUARIOS = "src/main/resources/persistencia/archivoUsuarios.txt";
+    public static final String RUTA_ARCHIVO_LOG = "src/main/resources/persistencia/Log/UsuariosLog.txt";
+    public static final String RUTA_ARCHIVO_MODELO_PES_BINARIO = "src/main/resources/persistencia/model.dat";
+    public static final String RUTA_ARCHIVO_MODELO_PES_XML = "src/main/resources/persistencia/model.xml";
 
 //	C:\td\persistencia
 
