@@ -86,62 +86,6 @@
      </void>
     </object>
    </void>
-   <void method="add">
-    <object class="co.edu.unquindio.proyectofinal.dwr.model.Usuario">
-     <void property="correo">
-      <string>adad</string>
-     </void>
-     <void property="direccion">
-      <string>adad</string>
-     </void>
-     <void property="documento">
-      <string>1313</string>
-     </void>
-     <void property="edad">
-      <string>131</string>
-     </void>
-     <void property="idUsuario">
-      <string>213313</string>
-     </void>
-     <void property="nombre">
-      <string>dsad</string>
-     </void>
-     <void property="saldoTotal">
-      <int>31131</int>
-     </void>
-     <void property="telefono">
-      <string>311131</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="co.edu.unquindio.proyectofinal.dwr.model.Usuario">
-     <void property="correo">
-      <string>dasdas</string>
-     </void>
-     <void property="direccion">
-      <string>sadd</string>
-     </void>
-     <void property="documento">
-      <string>12313</string>
-     </void>
-     <void property="edad">
-      <string>21</string>
-     </void>
-     <void property="idUsuario">
-      <string>3131</string>
-     </void>
-     <void property="nombre">
-      <string>adad</string>
-     </void>
-     <void property="saldoTotal">
-      <int>1231</int>
-     </void>
-     <void property="telefono">
-      <string>13131</string>
-     </void>
-    </object>
-   </void>
   </void>
  </object>
 </java>

@@ -10,9 +10,9 @@ import java.io.IOException;
 public class MainPes extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainPes.class.getResource("usuario.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainPes.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("samuel mlp!");
+        stage.setTitle("hello!");
         stage.setScene(scene);
         stage.show();
     }
@@ -21,4 +21,4 @@ public class MainPes extends Application {
         launch();
     }
 }
-//Muñoz perrita tonta ESTUPIDA
+

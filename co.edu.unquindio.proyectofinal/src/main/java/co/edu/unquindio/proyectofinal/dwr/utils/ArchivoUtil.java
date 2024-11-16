@@ -13,6 +13,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Properties;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,6 +28,28 @@ import java.util.logging.SimpleFormatter;
  *
  */
 public  class ArchivoUtil {
+
+    public static boolean iniciarSesion(String user, String password, String rutaUsersProperties) {
+
+        Properties users = new Properties();
+
+        try {
+            FileInputStream fis = new FileInputStream(rutaUsersProperties);
+            users.load(fis);
+            fis.close();
+        }catch (IOException e) {
+            System.out.println("Error al cargar el archivo de propiedades: " + e.getMessage());
+            return false;
+        }
+        boolean resultado = false;
+
+        if (users.getProperty("usuario").equals(user)) {
+            if (users.getProperty("contrasena").equals(password)) {
+                resultado = true;
+            }
+        }
+        return resultado;
+    }
 
     static String fechaSistema = "";
     /**
