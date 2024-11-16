@@ -38,8 +38,10 @@ public class LoginView {
 
     @FXML
     void onIniciar(ActionEvent event) {
+        System.out.println("Entrada");
         iniciarSesion();
     }
+
     @FXML
     void initialize() {
         loginController = new LoginController();
@@ -61,9 +63,13 @@ public class LoginView {
             mostrarMensaje("Error", "Datos Nulos", "Rellene los campos solicitados", Alert.AlertType.ERROR);
         }
     }
+
+
+
     private void NuevaVista() {
+
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainPes.class.getResource("aplicacion.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(MainPes.class.getResource("usuario.fxml"));
             Parent root = fxmlLoader.load();
             Stage nuevaVentana = new Stage();
             Scene scene = new Scene(root);
@@ -82,6 +88,8 @@ public class LoginView {
             return true;
         }
     }
+
+
 
     private void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType alertType) {
         Alert alert = new Alert(alertType);

@@ -32,7 +32,7 @@ public  class ArchivoUtil {
     public static boolean iniciarSesion(String user, String password, String rutaUsersProperties) {
 
         Properties users = new Properties();
-
+        System.out.println(rutaUsersProperties);
         try {
             FileInputStream fis = new FileInputStream(rutaUsersProperties);
             users.load(fis);
@@ -44,7 +44,7 @@ public  class ArchivoUtil {
         boolean resultado = false;
 
         if (users.getProperty("usuario").equals(user)) {
-            if (users.getProperty("contrasena").equals(password)) {
+            if (users.getProperty("password").equals(password)) {
                 resultado = true;
             }
         }
