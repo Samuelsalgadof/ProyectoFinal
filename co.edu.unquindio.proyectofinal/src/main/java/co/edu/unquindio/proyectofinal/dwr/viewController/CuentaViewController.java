@@ -1,7 +1,5 @@
 package co.edu.unquindio.proyectofinal.dwr.viewController;
 
-package co.edu.unquindio.proyectofinal.dwr.viewController;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
