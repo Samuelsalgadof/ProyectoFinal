@@ -140,6 +140,10 @@ public class ModelFactoryController implements IModelFactoryControllerService {
             return false;
         }
     }
+
+    public boolean iniciarSesion(String user, String password) {
+        return Persistencia.iniciarSesion(user, password);
+    }
     private void cargarResourceXML() {pes = Persistencia.cargarRecursoPesXML();
     }
 

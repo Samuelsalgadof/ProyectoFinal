@@ -273,6 +273,10 @@ public class Persistencia {
             e.printStackTrace();
         }
     }
+
+    public static boolean iniciarSesion(String user, String password){
+        return ArchivoUtil.iniciarSesion(user,password,RUTA_ARCHIVO_USUARIOS);
+    }
 }
 
 

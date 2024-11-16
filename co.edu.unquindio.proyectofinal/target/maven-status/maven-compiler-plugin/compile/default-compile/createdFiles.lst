@@ -10,6 +10,7 @@ co\edu\unquindio\proyectofinal\dwr\mapping\Dto\UsuarioDto.class
 co\edu\unquindio\proyectofinal\dwr\mapping\mappers\PesMapper.class
 co\edu\unquindio\proyectofinal\dwr\model\Pes.class
 module-info.class
+co\edu\unquindio\proyectofinal\dwr\viewController\LoginView.class
 co\edu\unquindio\proyectofinal\dwr\viewController\TransaccionViewController.class
 co\edu\unquindio\proyectofinal\dwr\Controller\CuentaController.class
 co\edu\unquindio\proyectofinal\dwr\viewController\PresupuestoViewController.class
@@ -25,6 +26,7 @@ co\edu\unquindio\proyectofinal\dwr\mapping\Dto\CuentaDto.class
 co\edu\unquindio\proyectofinal\dwr\Controller\PresupuestoController.class
 co\edu\unquindio\proyectofinal\dwr\model\Categoria.class
 co\edu\unquindio\proyectofinal\dwr\viewController\UsuarioViewController.class
+co\edu\unquindio\proyectofinal\dwr\Controller\LoginController.class
 co\edu\unquindio\proyectofinal\dwr\utils\ArchivoUtil.class
 co\edu\unquindio\proyectofinal\dwr\model\Cuenta.class
 co\edu\unquindio\proyectofinal\dwr\model\Presupuesto.class
