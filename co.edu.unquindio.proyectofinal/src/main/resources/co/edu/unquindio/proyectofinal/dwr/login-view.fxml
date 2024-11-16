@@ -4,6 +4,8 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,29 +13,59 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="294.0" prefWidth="634.0" style="-fx-background-color: LIME;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unquindio.proyectofinal.dwr.viewController.LoginView">
+<AnchorPane prefHeight="294.0" prefWidth="634.0" style="-fx-background-color: #063424;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unquindio.proyectofinal.dwr.viewController.LoginView">
     <children>
-        <Text fontSmoothingType="LCD" layoutX="28.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BIENVENIDO A PES" textAlignment="CENTER" underline="true" wrappingWidth="293.22119140625">
+        <!-- Texto "BIENVENIDO A PES" ajustado a un tamaño más pequeño y sencillo -->
+        <Text fontSmoothingType="LCD" layoutX="28.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="1.0" text="BIENVENIDO A PES" textAlignment="CENTER" wrappingWidth="293.22119140625" style="
+            -fx-font-size: 24px; /* Ajustado a un tamaño más adecuado */
+            -fx-font-weight: bold; /* Negrita */
+            -fx-text-fill: #4CAF50; /* Verde brillante */
+            -fx-stroke:  #A9DFBF; /* Contorno negro para resaltar */
+            -fx-effect: dropshadow(gaussian, rgb(169,223,191), 10, 0, 0, 5); /* Sombra suave para resaltar */
+            -fx-font-family: 'Arial Black'; /* Fuente fuerte y llamativa */
+        ">
             <font>
-                <Font name="Tahoma" size="18.0" />
+                <Font name="Tahoma" size="24.0" />
             </font>
             <effect>
-                <Glow />
+                <Glow level="0.6" /> <!-- Brillo sutil para hacerlo más atractivo -->
             </effect>
         </Text>
-        <TextField fx:id="txtUser" layoutX="50.0" layoutY="88.0" prefHeight="25.0" prefWidth="250.0" promptText="INGRESE SU USUARIO" />
-        <PasswordField fx:id="txtPassword" layoutX="50.0" layoutY="147.0" prefHeight="28.0" prefWidth="250.0" promptText="INGRESE LA CONTRASEÑA" />
-        <Button fx:id="btnIniciar" layoutX="113.0" layoutY="209.0" mnemonicParsing="false" onAction="#onIniciar" prefHeight="34.0" prefWidth="123.0" text="Ingresar">
+
+        <TextField fx:id="txtUser" layoutX="50.0" layoutY="88.0" prefHeight="25.0" prefWidth="250.0" promptText="INGRESE SU USUARIO" style="-fx-background-color: #E1F5D0;" />
+        <PasswordField fx:id="txtPassword" layoutX="50.0" layoutY="147.0" prefHeight="28.0" prefWidth="250.0" promptText="INGRESE LA CONTRASEÑA" style="-fx-background-color: #E1F5D0;" />
+
+        <!-- Botón estilizado -->
+        <Button fx:id="btnIniciar" layoutX="113.0" layoutY="209.0" mnemonicParsing="false" onAction="#onIniciar" prefHeight="34.0" prefWidth="123.0" text="Ingresar" style="
+            -fx-background-color: #4CAF50; /* Verde brillante */
+            -fx-text-fill: white; /* Texto blanco */
+            -fx-font-size: 16px; /* Tamaño de fuente */
+            -fx-font-weight: bold; /* Fuente en negrita */
+            -fx-background-radius: 12px; /* Bordes redondeados */
+            -fx-padding: 10px 20px; /* Relleno para un botón más grande */
+            -fx-effect: dropshadow(gaussian, rgb(169,223,191), 10, 0, 0, 3); /* Efecto de sombra */
+        ">
             <font>
                 <Font size="17.0" />
             </font>
         </Button>
-      <ImageView fitHeight="188.0" fitWidth="248.0" layoutX="336.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Imagen.login/Imagen%20logo%20pes.jpg" />
-         </image>
-      </ImageView>
-      <Line endX="154.0" layoutX="437.0" layoutY="53.0" startX="-116.0" />
-      <Line endX="154.0" layoutX="441.0" layoutY="247.0" startX="-116.0" />
+
+        <!-- Imagen con bordes redondeados y sombra suave -->
+        <ImageView fitHeight="188.0" fitWidth="248.0" layoutX="336.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" style="
+            -fx-background-radius: 15px; /* Bordes más suaves */
+            -fx-border-radius: 15px; /* Bordes redondeados también en el borde */
+            -fx-border-color: #4CAF50; /* Borde verde brillante */
+            -fx-border-width: 6px; /* Borde más grueso */
+            -fx-effect: dropshadow(gaussian, rgb(169,223,191), 20, 0, 0, 12); /* Sombra más fuerte y difusa */
+            -fx-opacity: 0.9; /* Ligera opacidad para dar sensación de elegancia */
+            -fx-blend-mode: multiply; /* Efecto de mezcla para suavizar los bordes */
+        ">
+            <image>
+                <Image url="@Imagen.login/Imagen%20logo%20pes.jpg" />
+            </image>
+        </ImageView>
+
+        <Line endX="154.0" layoutX="437.0" layoutY="53.0" startX="-116.0" />
+        <Line endX="154.0" layoutX="441.0" layoutY="247.0" startX="-116.0" />
     </children>
 </AnchorPane>

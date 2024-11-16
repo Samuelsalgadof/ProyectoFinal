@@ -277,7 +277,6 @@ public class Persistencia {
     }
 
     public static boolean iniciarSesion(String user, String password){
-        System.out.println(user);
         return ArchivoUtil.iniciarSesion(user,password,RUTA_ARCHIVO_PROPERTIES);
     }
 }

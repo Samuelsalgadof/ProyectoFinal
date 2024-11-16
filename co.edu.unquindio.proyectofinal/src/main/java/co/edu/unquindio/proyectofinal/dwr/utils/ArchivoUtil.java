@@ -32,7 +32,6 @@ public  class ArchivoUtil {
     public static boolean iniciarSesion(String user, String password, String rutaUsersProperties) {
 
         Properties users = new Properties();
-        System.out.println(rutaUsersProperties);
         try {
             FileInputStream fis = new FileInputStream(rutaUsersProperties);
             users.load(fis);

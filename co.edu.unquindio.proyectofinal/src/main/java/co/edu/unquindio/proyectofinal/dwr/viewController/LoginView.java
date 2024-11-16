@@ -38,7 +38,6 @@ public class LoginView {
 
     @FXML
     void onIniciar(ActionEvent event) {
-        System.out.println("Entrada");
         iniciarSesion();
     }
 

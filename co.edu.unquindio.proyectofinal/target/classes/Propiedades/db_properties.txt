@@ -1,7 +1,2 @@
 usuario=123
 password=123
-puerta=8080
-host1=127.0.0.1
-host2=198.168.1.105
-endpoint1=/api/v1/status
-endpoint2=/api/v3/info
