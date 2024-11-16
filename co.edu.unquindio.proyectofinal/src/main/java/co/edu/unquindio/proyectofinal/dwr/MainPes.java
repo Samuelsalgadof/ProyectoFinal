@@ -21,8 +21,3 @@ public class MainPes extends Application {
         launch();
     }
 }
-<<<<<<< HEAD
-
-=======
-//Muñoz perrita tonta ESTUPIDAADA
->>>>>>> 55b0142fc3d36676f8cf696e66216d59784fe82e
