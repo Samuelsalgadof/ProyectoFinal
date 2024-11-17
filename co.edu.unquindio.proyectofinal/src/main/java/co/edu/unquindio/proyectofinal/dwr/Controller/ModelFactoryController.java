@@ -1,82 +1,80 @@
 package co.edu.unquindio.proyectofinal.dwr.Controller;
 
 import co.edu.unquindio.proyectofinal.dwr.Controller.Service.IModelFactoryControllerService;
+import co.edu.unquindio.proyectofinal.dwr.exceptions.CuentaExceptions;
 import co.edu.unquindio.proyectofinal.dwr.exceptions.UsuarioExceptions;
+import co.edu.unquindio.proyectofinal.dwr.mapping.Dto.CuentaDto;
 import co.edu.unquindio.proyectofinal.dwr.mapping.Dto.UsuarioDto;
 import co.edu.unquindio.proyectofinal.dwr.mapping.mappers.PesMapper;
+import co.edu.unquindio.proyectofinal.dwr.model.Cuenta;
 import co.edu.unquindio.proyectofinal.dwr.model.Pes;
 import co.edu.unquindio.proyectofinal.dwr.model.Usuario;
+import co.edu.unquindio.proyectofinal.dwr.utils.CuentaUtils;
 import co.edu.unquindio.proyectofinal.dwr.utils.Persistencia;
 import co.edu.unquindio.proyectofinal.dwr.utils.UsuarioUtils;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ModelFactoryController implements IModelFactoryControllerService {
 
+    private static final Logger logger = Logger.getLogger(ModelFactoryController.class.getName());
     Pes pes;
     PesMapper mapper = PesMapper.INSTANCE;
 
+
     //------------------------------  Singleton ------------------------------------------------
-    // Clase estatica oculta. Tan solo se instanciara el singleton una vez
+    // Clase estática oculta. Se instancia el Singleton una sola vez.
     private static class SingletonHolder {
-        private final static ModelFactoryController eINSTANCE = new ModelFactoryController();
+        private final static ModelFactoryController INSTANCE = new ModelFactoryController();
     }
 
-    // Método para obtener la instancia de nuestra clase
+    // Método para obtener la instancia de la clase.
     public static ModelFactoryController getInstance() {
-        return SingletonHolder.eINSTANCE;
+        return SingletonHolder.INSTANCE;
     }
 
     public ModelFactoryController() {
-        //1. inicializar datos y luego guardarlo en archivos
-        System.out.println("invocación clase singleton");
-//         cargarDatosBase();
-//     salvarDatosPrueba();
+        System.out.println("Invocación de la clase singleton");
+        // Cargar los datos de los archivos al inicio
+        cargarResourceXML();
 
-        //2. Cargar los datos de los archivos
-//  cargarDatosDesdeArchivos();
+        cargarDatosBase();
 
-        //3. Guardar y Cargar el recurso serializable binario
-//     cargarResourceBinario();
-//guardarResourceBinario();
 
-        //4. Guardar y Cargar el recurso serializable XML
-//		guardarResourceXML();
- cargarResourceXML();
 
-        //Siempre se debe verificar si la raiz del recurso es null
-
-        if(pes == null){
-//            cargarDatosBase();
-//           guardarResourceXML();
+        // Siempre verificar si la raíz de 'pes' es null.
+        if (pes == null) {
+            cargarDatosBase();
+            guardarResourceXML();
         }
         registrarAccionesSistema("Inicio de sesión", 1, "inicioSesión");
     }
 
+    private void cargarDatosBase() {
+        Pes ayudaPes = CuentaUtils.inicializarDatos();
+//        pes = UsuarioUtils.inicializarDatos();//
+        pes.setListaCuentas(ayudaPes.getListaCuentas());
+    }
 
 
+
+    private void cargarResourceXML() {
+        pes = Persistencia.cargarRecursoPesXML();
+    }
+
+    private void guardarResourceXML() {
+        Persistencia.guardarRecursoPesXML(pes);
+    }
 
     private void salvarDatosPrueba() {
         try {
             Persistencia.guardarUsuarios(getPes().getListaUsuarios());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            logger.log(Level.SEVERE, "Error al guardar los usuarios de prueba: ", e);
         }
-    }
-
-    private void cargarDatosDesdeArchivos() {
-        pes = new Pes();
-        try {
-            Persistencia.cargarDatosArchivos(pes);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
-    private void cargarDatosBase() {
-        pes = UsuarioUtils.inicializarDatos();
     }
 
     public Pes getPes() {
@@ -97,20 +95,39 @@ public class ModelFactoryController implements IModelFactoryControllerService {
 
     @Override
     public List<UsuarioDto> obtenerUsuarios() {
-        return  mapper.getUsuariosDto(pes.getListaUsuarios());
+        return mapper.getUsuariosDto(pes.getListaUsuarios());
     }
 
     @Override
     public boolean agregarUsuario(UsuarioDto usuarioDto) {
-        try{
-            if(!pes.verificarUsuarioExistente(String.valueOf((usuarioDto.idUsuario())))) {
+        try {
+            if (!pes.verificarUsuarioExistente(String.valueOf(usuarioDto.idUsuario()))) {
                 Usuario usuario = mapper.usuarioDtoToUsuario(usuarioDto);
                 getPes().agregarUsuario(usuario);
                 guardarResourceXML();
+                return true;
             }
-            return true;
-        }catch (UsuarioExceptions e){
-            e.getMessage();
+            logger.log(Level.WARNING, "El usuario con ID: " + usuarioDto.idUsuario() + " ya existe.");
+            return false;
+        } catch (UsuarioExceptions e) {
+            logger.log(Level.SEVERE, "Error al agregar el usuario: " + e.getMessage(), e);
+            return false;
+        }
+    }
+
+    @Override
+    public boolean agregarCuenta(CuentaDto cuentaDto) {
+        try {
+            Cuenta cuenta = mapper.cuentatoCuentaDto(cuentaDto);
+            if (!pes.verificarCuentaExistente(cuenta.getIdCuenta())) {
+                getPes().agregarCuenta(cuenta);
+                guardarResourceXML();
+                return true;
+            }
+            logger.log(Level.WARNING, "La cuenta con ID: " + cuentaDto.idCuenta() + " ya existe.");
+            return false;
+        } catch (CuentaExceptions e) {
+            logger.log(Level.SEVERE, "Error al agregar la cuenta: " + e.getMessage(), e);
             return false;
         }
     }
@@ -122,11 +139,21 @@ public class ModelFactoryController implements IModelFactoryControllerService {
             flagExiste = getPes().eliminarUsuario(idUsuario);
             guardarResourceXML();
         } catch (UsuarioExceptions e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Error al eliminar el usuario con ID: " + idUsuario, e);
         }
         return flagExiste;
+    }
 
+    @Override
+    public boolean eliminarCuenta(String idCuenta) {
+        boolean flagExiste = false;
+        try {
+            flagExiste = getPes().eliminarCuenta(idCuenta);
+            guardarResourceXML();
+        } catch (CuentaExceptions e) {
+            logger.log(Level.SEVERE, "Error al eliminar la cuenta con ID: " + idCuenta, e);
+        }
+        return flagExiste;
     }
 
     @Override
@@ -134,9 +161,23 @@ public class ModelFactoryController implements IModelFactoryControllerService {
         try {
             Usuario usuario = mapper.usuarioDtoToUsuario(usuarioDto);
             getPes().actualizarUsuario(idUsuarioActual, usuario);
+            guardarResourceXML();
             return true;
         } catch (UsuarioExceptions e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Error al actualizar el usuario con ID: " + idUsuarioActual, e);
+            return false;
+        }
+    }
+
+    @Override
+    public boolean actualizarCuenta(String idCuentaActual, CuentaDto cuentaDto) {
+        try {
+            Cuenta cuenta = mapper.cuentatoCuentaDto(cuentaDto);
+            getPes().actualizarCuenta(idCuentaActual, cuenta);
+            guardarResourceXML();
+            return true;
+        } catch (CuentaExceptions e) {
+            logger.log(Level.SEVERE, "Error al actualizar la cuenta con ID: " + idCuentaActual, e);
             return false;
         }
     }
@@ -144,24 +185,14 @@ public class ModelFactoryController implements IModelFactoryControllerService {
     public boolean iniciarSesion(String user, String password) {
         return Persistencia.iniciarSesion(user, password);
     }
-    private void cargarResourceXML() {pes = Persistencia.cargarRecursoPesXML();
-    }
-
-    private void guardarResourceXML() {
-        Persistencia.guardarRecursoPesXML(pes);
-    }
-
-    private void cargarResourceBinario() {
-    pes = Persistencia.   cargarRecursoPesBinario();
-    }
-
-
-    private void guardarResourceBinario() {
-        Persistencia.guardarRecursoPesBinario(pes);
-    }
 
     public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
         Persistencia.guardaRegistroLog(mensaje, nivel, accion);
     }
+    public List<CuentaDto> obtenerCuentaDTO() {
+        System.out.println(pes.getListaCuentas());
+        return mapper.getCuentaDto(pes.getListaCuentas());
+    }
 }
+
 

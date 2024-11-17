@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="869.0" prefWidth="1136.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unquindio.proyectofinal.dwr.viewController.PSEViewController">
+   <children>
+      <TabPane prefHeight="894.0" prefWidth="1136.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Usuario">
+               <content>
+                  <fx:include source="usuario.fxml" />
+               </content>
+            </Tab>
+            <Tab text="Cuenta">
+               <content>
+                  <fx:include source="cuenta.fxml" />
+               </content>
+            </Tab>
+            <Tab text="Transaccion">
+               <content>
+                  <fx:include source="Transaccion.fxml" />
+               </content>
+            </Tab>
+            <Tab text="Presupuesto">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <fx:include source="presupuesto.fxml" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Categoria">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <fx:include source="categoria.fxml" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

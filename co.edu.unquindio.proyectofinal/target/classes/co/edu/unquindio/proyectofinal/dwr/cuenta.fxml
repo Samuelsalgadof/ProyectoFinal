@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.collections.FXCollections?>
-<?import javafx.geometry.Insets?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.unquindio.proyectofinal.dwr.viewController.PresupuestoViewController"
-            prefHeight="709.0" prefWidth="1033.0" style="-fx-background-color: #013220; -fx-padding: 20;">
+<AnchorPane prefHeight="709.0" prefWidth="1033.0" style="-fx-background-color: #013220; -fx-padding: 20;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unquindio.proyectofinal.dwr.viewController.CuentaViewController">
 
     <children>
         <!-- Formulario -->
@@ -51,8 +48,8 @@
 
                 <HBox alignment="CENTER_RIGHT" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="3">
                     <children>
-                        <Button fx:id="btnAgregar" style="-fx-background-color: #28B463; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 16;" text="Agregar" />
-                        <Button fx:id="btnActualizar" style="-fx-background-color: #28B463; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 16;" text="Actualizar" />
+                        <Button fx:id="btnAgregarCuenta" onAction="#onNuevaCuenta" style="-fx-background-color: #28B463; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 16;" text="Agregar" />
+                        <Button fx:id="btnActualizar" onAction="#onActualizarCuenta" style="-fx-background-color: #28B463; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 16;" text="Actualizar" />
                     </children>
                 </HBox>
             </children>
@@ -65,16 +62,16 @@
         </GridPane>
 
         <!-- Tabla de Cuentas -->
-        <TableView fx:id="tableCuentas" layoutX="20.0" layoutY="280.0" prefHeight="350.0" prefWidth="994.0" style="-fx-background-color: #2E8B57; -fx-border-color: #00FF7F; -fx-border-width: 2; -fx-border-radius: 8;">
+        <TableView fx:id="colCuentas" layoutX="20.0" layoutY="280.0" prefHeight="350.0" prefWidth="994.0" style="-fx-background-color: #2E8B57; -fx-border-color: #00FF7F; -fx-border-width: 2; -fx-border-radius: 8;">
             <columns>
-                <TableColumn fx:id="colIdCuenta" prefWidth="100.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="ID Cuenta" />
-                <TableColumn fx:id="colBanco" prefWidth="200.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="Nombre del Banco" />
-                <TableColumn fx:id="colTipoCuenta" prefWidth="200.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="Tipo de Cuenta" />
-                <TableColumn fx:id="colNumeroCuenta" prefWidth="200.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="Número de Cuenta" />
+                <TableColumn fx:id="colIDCuenta" prefWidth="280.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="ID Cuenta" />
+                <TableColumn fx:id="colBanco" prefWidth="269.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="Nombre del Banco" />
+                <TableColumn fx:id="colTipo" prefWidth="249.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="Tipo de Cuenta" />
+                <TableColumn fx:id="colNumero" prefWidth="193.0" style="-fx-background-color: #A9DFBF; -fx-text-fill: #0f2d03;" text="Número de Cuenta" />
             </columns>
         </TableView>
 
         <!-- Botón Eliminar -->
-        <Button fx:id="btnEliminar" layoutX="450.0" layoutY="650.0" style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 16;" text="Eliminar" />
+        <Button fx:id="btnEliminar" layoutX="450.0" layoutY="650.0" onAction="#onEliminarCuenta" style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 16;" text="Eliminar" />
     </children>
 </AnchorPane>

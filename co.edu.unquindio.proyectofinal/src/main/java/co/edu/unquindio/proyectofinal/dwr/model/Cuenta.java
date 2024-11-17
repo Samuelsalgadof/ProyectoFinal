@@ -2,21 +2,23 @@ package co.edu.unquindio.proyectofinal.dwr.model;
 
 import java.io.Serializable;
 
-public class Cuenta implements Serializable {
-
+public class Cuenta extends Usuario implements Serializable {
+    private static int contador = 0;
     private int idCuenta;
     private String nombreBanco;
     private int numCuenta;
     private String tipoCuenta;
 
     public Cuenta() {
+        this.idCuenta = contador++;
     }
 
-    public Cuenta(int idCuenta, String nombreBanco, int numCuenta, String tipoCuenta) {
-        this.idCuenta = idCuenta;
+    public Cuenta(String nombreBanco, int numCuenta, String tipoCuenta) {
+        this.idCuenta = contador++;
         this.nombreBanco = nombreBanco;
         this.numCuenta = numCuenta;
         this.tipoCuenta = tipoCuenta;
+
     }
 
     public int getIdCuenta() {
@@ -49,5 +51,8 @@ public class Cuenta implements Serializable {
 
     public void setTipoCuenta(String tipoCuenta) {
         this.tipoCuenta = tipoCuenta;
+    }
+
+    public void setSaldo(int i) {
     }
 }

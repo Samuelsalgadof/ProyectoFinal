@@ -1,5 +1,6 @@
 package co.edu.unquindio.proyectofinal.dwr.model;
 
+import co.edu.unquindio.proyectofinal.dwr.exceptions.CuentaExceptions;
 import co.edu.unquindio.proyectofinal.dwr.exceptions.UsuarioExceptions;
 import co.edu.unquindio.proyectofinal.dwr.model.Service.IPesService;
 
@@ -63,6 +64,10 @@ public class Pes implements IPesService, Serializable {
         getListaUsuarios().add(nuevoUsuario);
     }
 
+    public void agregarCuenta(Cuenta nuevaCuenta) throws UsuarioExceptions {
+        getListaCuentas().add(nuevaCuenta);
+    }
+
     @Override
     public Usuario crearUsuario(String idUsuario, int saldoTotal, String nombre, String documento, String telefono, String correo, String edad, String direccion) throws UsuarioExceptions {
         Usuario nuevoUsuario = null;
@@ -85,6 +90,25 @@ public class Pes implements IPesService, Serializable {
         return nuevoUsuario;
     }
 
+    public Cuenta crearCuenta(String idCuenta, int saldoTotal, String nombreBanco, String tipoCuenta, String numeroCuenta) throws CuentaExceptions {
+        Cuenta nuevaCuenta = null;
+        boolean cuentaExiste = verificarCuentaExistente(Integer.parseInt(idCuenta));
+        if (cuentaExiste) {
+            throw new CuentaExceptions("La cuenta con id de cuenta: " + idCuenta + " ya existe");
+        } else {
+            nuevaCuenta = new Cuenta();
+            nuevaCuenta.setIdCuenta(Integer.parseInt(idCuenta));
+            nuevaCuenta.setNombreBanco(nombreBanco);
+            nuevaCuenta.setTipoCuenta(tipoCuenta);
+            nuevaCuenta.setNumCuenta(Integer.parseInt(numeroCuenta));
+            nuevaCuenta.setSaldoTotal(saldoTotal);
+
+            getListaCuentas().add(nuevaCuenta);
+        }
+        return nuevaCuenta;
+    }
+
+
     @Override
     public Boolean eliminarUsuario(String idUsuario) throws UsuarioExceptions {
         Usuario usuario = null;
@@ -98,6 +122,22 @@ public class Pes implements IPesService, Serializable {
         }
         return flagExiste;
     }
+
+    @Override
+    public Boolean eliminarCuenta(String idCuenta) throws UsuarioExceptions {
+        Cuenta cuenta = null;
+        boolean flagExiste = false;
+       cuenta = obtenerCuenta(idCuenta);
+        if(cuenta == null)
+            throw new CuentaExceptions("La Cuenta a eliminar no existe");
+        else{
+            getListaCuentas().remove(cuenta);
+            flagExiste = true;
+        }
+        return flagExiste;
+    }
+
+
 
     @Override
     public boolean actualizarUsuario(String idUsuarioActual, Usuario usuario) throws UsuarioExceptions {
@@ -116,6 +156,25 @@ public class Pes implements IPesService, Serializable {
             return true;
         }
     }
+
+    public boolean actualizarCuenta(String idCuentaActual, Cuenta cuenta) throws CuentaExceptions {
+
+        Cuenta cuentaActual = obtenerCuenta(idCuentaActual);
+
+        if (cuentaActual == null) {
+
+            throw new CuentaExceptions("La cuenta a actualizar no existe");
+        } else {
+
+            cuentaActual.setIdCuenta(cuenta.getIdCuenta());
+            cuentaActual.setNombreBanco(cuenta.getNombreBanco());
+            cuentaActual.setTipoCuenta(cuenta.getTipoCuenta());
+            cuentaActual.setNumCuenta(cuenta.getNumCuenta());
+
+            return true;
+        }
+    }
+
     @Override
     public boolean verificarUsuarioExistente(String idUsuario) throws UsuarioExceptions {
         if(usuarioExiste(idUsuario)){
@@ -124,6 +183,16 @@ public class Pes implements IPesService, Serializable {
             return false;
         }
     }
+
+    public boolean verificarCuentaExistente(int idCuenta) throws CuentaExceptions {
+        if (cuentaExiste(idCuenta)) {
+            // Lanzamos una excepción si la cuenta ya existe
+            throw new CuentaExceptions("La cuenta con id de cuenta: " + idCuenta + " ya existe");
+        }
+        // Retornamos true si la cuenta no existe
+        return true;
+    }
+
 
     @Override
     public Usuario obtenerUsuario(String idUsuario) {
@@ -138,9 +207,41 @@ public class Pes implements IPesService, Serializable {
     }
 
     @Override
+    public Cuenta obtenerCuenta(String idCuenta) {
+        if (idCuenta == null || idCuenta.trim().isEmpty()) {
+            System.out.println("El idCuenta es nulo o está vacío.");
+            return null;
+        }
+
+        int idCuentaInt;
+        try {
+            idCuentaInt = Integer.parseInt(idCuenta.trim());
+        } catch (NumberFormatException e) {
+            System.out.println("El idCuenta no es un número válido.");
+            return null;
+        }
+
+        for (Cuenta cuenta : getListaCuentas()) {
+            System.out.println("Comparando '" + cuenta.getIdCuenta() + "' con '" + idCuentaInt + "'");
+            if (cuenta.getIdCuenta() == idCuentaInt) {
+                System.out.println("Cuenta encontrada: " + cuenta);
+                return cuenta;
+            }
+        }
+        System.out.println("Cuenta no encontrada.");
+        return null;
+    }
+
+
+    @Override
     public ArrayList<Usuario> obtenerUsuarios() {
         // TODO Auto-generated method stub
         return getListaUsuarios();
+    }
+
+    public ArrayList<Cuenta> obtenerCuentas() {
+        // TODO Auto-generated method stub
+        return getListaCuentas();
     }
 
     public boolean usuarioExiste(String idUsuario) {
@@ -153,5 +254,25 @@ public class Pes implements IPesService, Serializable {
         }
         return usuarioEncontrado;
     }
+
+    public boolean cuentaExiste(int idCuenta) {
+        boolean cuentaEncontrada = false;
+
+
+        for (Cuenta cuenta : getListaCuentas()) {
+
+            if (cuenta.getIdCuenta() == idCuenta) {
+                cuentaEncontrada = true;
+                break;
+            }
+        }
+        return cuentaEncontrada;
+    }
+
+
+
+
+
+
 
 }

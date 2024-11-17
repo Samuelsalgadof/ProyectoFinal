@@ -10,7 +10,7 @@ import java.util.List;
 /*
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-11-16T00:57:52-0500",
+    date = "2024-11-16T19:57:04-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 22.0.2 (Oracle Corporation)"
 )
 */
@@ -98,5 +98,58 @@ public class PesMapperImpl implements PesMapper {
         CuentaDto cuentaDto = new CuentaDto( idCuenta, nombreBanco, numCuenta, tipoCuenta );
 
         return cuentaDto;
+    }
+
+    @Override
+    public CuentaDto cuentatoCuentaDto(Cuenta cuenta) {
+        if ( cuenta == null ) {
+            return null;
+        }
+
+        String idCuenta = null;
+        String nombreBanco = null;
+        int numCuenta = 0;
+        String tipoCuenta = null;
+
+        idCuenta = String.valueOf( cuenta.getIdCuenta() );
+        nombreBanco = cuenta.getNombreBanco();
+        numCuenta = cuenta.getNumCuenta();
+        tipoCuenta = cuenta.getTipoCuenta();
+
+        CuentaDto cuentaDto = new CuentaDto( idCuenta, nombreBanco, numCuenta, tipoCuenta );
+
+        return cuentaDto;
+    }
+
+    @Override
+    public Cuenta cuentatoCuentaDto(CuentaDto cuentaDto) {
+        if ( cuentaDto == null ) {
+            return null;
+        }
+
+        Cuenta cuenta = new Cuenta();
+
+        if ( cuentaDto.idCuenta() != null ) {
+            cuenta.setIdCuenta( Integer.parseInt( cuentaDto.idCuenta() ) );
+        }
+        cuenta.setNombreBanco( cuentaDto.nombreBanco() );
+        cuenta.setNumCuenta( cuentaDto.numCuenta() );
+        cuenta.setTipoCuenta( cuentaDto.tipoCuenta() );
+
+        return cuenta;
+    }
+
+    @Override
+    public List<CuentaDto> getCuentaDto(List<Cuenta> listaCuentas) {
+        if ( listaCuentas == null ) {
+            return null;
+        }
+
+        List<CuentaDto> list = new ArrayList<CuentaDto>( listaCuentas.size() );
+        for ( Cuenta cuenta : listaCuentas ) {
+            list.add( cuentatoCuentaDto( cuenta ) );
+        }
+
+        return list;
     }
 }

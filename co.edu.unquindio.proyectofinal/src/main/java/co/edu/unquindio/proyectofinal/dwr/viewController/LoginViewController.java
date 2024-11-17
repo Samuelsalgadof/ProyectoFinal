@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.scene.Node;
 import co.edu.unquindio.proyectofinal.dwr.Controller.LoginController;
 import co.edu.unquindio.proyectofinal.dwr.MainPes;
 
@@ -17,7 +18,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoginView {
+public class LoginViewController {
 
     LoginController loginController;
 
@@ -38,7 +39,7 @@ public class LoginView {
 
     @FXML
     void onIniciar(ActionEvent event) {
-        iniciarSesion();
+        iniciarSesion(event);
     }
 
     @FXML
@@ -46,13 +47,13 @@ public class LoginView {
         loginController = new LoginController();
     }
 
-    private void iniciarSesion() {
+    private void iniciarSesion(ActionEvent event) {
         String user = txtUser.getText().trim();
         String password = txtPassword.getText().trim();
 
         if (verificarDatos()) {
             if (loginController.iniciarSesion(user, password)) {
-                NuevaVista();
+                NuevaVista(event);
                 mostrarMensaje("Inicio De Sesion", "Sesion Iniciada", "Sesion iniciada correctamente.", Alert.AlertType.INFORMATION);
 
             } else {
@@ -65,16 +66,15 @@ public class LoginView {
 
 
 
-    private void NuevaVista() {
+    private void NuevaVista(ActionEvent event) {
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainPes.class.getResource("usuario.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(MainPes.class.getResource("PSE.fxml"));
             Parent root = fxmlLoader.load();
-            Stage nuevaVentana = new Stage();
-            Scene scene = new Scene(root);
-            nuevaVentana.setTitle("Asignaciones");
-            nuevaVentana.setScene(scene);
-            nuevaVentana.show();
+            Scene newScene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(newScene);
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }

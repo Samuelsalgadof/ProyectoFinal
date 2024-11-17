@@ -298,3 +298,69 @@ nov 16, 2024 4:05:32 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil
 INFO: inicioSesión,Inicio de sesión,2024-11-16
 nov 16, 2024 4:07:19 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 4:30:19 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 5:08:14 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 5:08:52 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 5:09:19 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: Agregar Usuario,Usuario agregado,2024-11-16
+nov 16, 2024 5:24:22 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 5:31:43 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 5:32:03 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 5:33:00 A. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 4:34:05 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 4:42:50 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 6:11:41 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 6:24:38 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 6:28:05 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 6:31:46 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 6:38:54 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 6:41:49 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 6:52:29 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 6:53:49 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:01:06 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:07:53 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:08:35 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:10:40 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:13:19 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:14:23 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:15:29 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:16:43 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:19:51 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:21:46 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:22:59 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:23:29 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:41:12 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:43:33 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16
+nov 16, 2024 7:46:54 P. M. co.edu.unquindio.proyectofinal.dwr.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-11-16

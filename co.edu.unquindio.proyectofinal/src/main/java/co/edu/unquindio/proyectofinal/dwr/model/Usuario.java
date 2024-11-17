@@ -65,6 +65,10 @@ public class Usuario extends Persona implements Serializable {
     public void setSaldoTotal(int saldoTotal) {
         this.saldoTotal = saldoTotal;
     }
+
+    public void setPropietario(String pablo) {
+
+    }
 }
 
 

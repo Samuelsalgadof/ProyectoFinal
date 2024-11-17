@@ -114,6 +114,34 @@
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="co.edu.unquindio.proyectofinal.dwr.model.Usuario">
+     <void property="correo">
+      <string>ASDA</string>
+     </void>
+     <void property="direccion">
+      <string>ADA</string>
+     </void>
+     <void property="documento">
+      <string>1231</string>
+     </void>
+     <void property="edad">
+      <string>1231</string>
+     </void>
+     <void property="idUsuario">
+      <string>12311</string>
+     </void>
+     <void property="nombre">
+      <string>DSADA</string>
+     </void>
+     <void property="saldoTotal">
+      <int>1231</int>
+     </void>
+     <void property="telefono">
+      <string>1231</string>
+     </void>
+    </object>
+   </void>
   </void>
  </object>
 </java>

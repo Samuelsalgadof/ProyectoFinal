@@ -33,4 +33,13 @@ public interface PesMapper {
     @IterableMapping(qualifiedByName = "cunetaToCuentaDto")
     CuentaDto clienteToClienteDto(Cuenta cuenta);
 
+
+    @Named("cuentaToCuentaDto")
+    CuentaDto cuentatoCuentaDto(Cuenta cuenta);
+
+    Cuenta cuentatoCuentaDto(CuentaDto cuentaDto);
+
+    @IterableMapping(qualifiedByName = "cuentaToCuentaDto")
+    List<CuentaDto> getCuentaDto(List<Cuenta> listaCuentas);
+
 }

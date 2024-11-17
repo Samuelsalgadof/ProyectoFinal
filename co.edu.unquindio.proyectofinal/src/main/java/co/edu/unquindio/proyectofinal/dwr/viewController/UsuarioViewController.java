@@ -76,7 +76,7 @@ public class UsuarioViewController {
     private Button btnAgregarUsuario;
 
     @FXML
-    private TableColumn<UsuarioDto, String> tcidUsuario;
+    private TableColumn<UsuarioDto, String>tcidUsuario;
 
     @FXML
     private TextField txtSaldoTotal;

@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="294.0" prefWidth="634.0" style="-fx-background-color: #063424;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unquindio.proyectofinal.dwr.viewController.LoginView">
+<AnchorPane prefHeight="294.0" prefWidth="634.0" style="-fx-background-color: #063424;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.unquindio.proyectofinal.dwr.viewController.LoginViewController">
     <children>
         <!-- Texto "BIENVENIDO A PES" ajustado a un tamaño más pequeño y sencillo -->
         <Text fontSmoothingType="LCD" layoutX="28.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="1.0" text="BIENVENIDO A PES" textAlignment="CENTER" wrappingWidth="293.22119140625" style="
